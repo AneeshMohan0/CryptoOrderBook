@@ -1,0 +1,5 @@
+yaml:
+  name: OrderBook
+  noOfProducerThread: 1
+  noOfConsumerThread: 1
+  csvFilePath: src/main/resources/solidus_orderbook_challenge_data.csv
