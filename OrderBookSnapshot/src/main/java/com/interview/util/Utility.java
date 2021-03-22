@@ -10,6 +10,6 @@ public class Utility {
     }
 
     public static Map getNewMap() {
-        return new ConcurrentHashMap();
+        return new ConcurrentHashMap<>();
     }
 }

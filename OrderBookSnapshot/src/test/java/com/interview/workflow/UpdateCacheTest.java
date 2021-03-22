@@ -1,7 +1,7 @@
 package com.interview.workflow;
 
+import com.interview.data.OrderBook;
 import com.interview.data.OrderBookCache;
-import com.interview.data.OrderKey;
 import com.interview.data.StatusEnum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -33,7 +33,7 @@ class UpdateCacheTest {
     private Double getQuantity(Exchange exchange) {
         return OrderBookCache.getInstance().getCacheReference()
                 .get(exchange.getOrderVO().getExchange()).get(exchange.getOrderVO().getSymbol())
-                .get(OrderKey.getOrderKey(exchange.getOrderVO())).getQuantity();
+                .get(OrderBook.OrderKey.getOrderKey(exchange.getOrderVO())).getQuantity().doubleValue();
     }
 
 

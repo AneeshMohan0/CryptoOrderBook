@@ -6,20 +6,20 @@ import com.interview.workflow.Exchange;
 
 public class Util {
 
-    private Util()
-    {
+    private Util() {
 
     }
 
     public static Exchange getExchange() {
-        OrderVO orderVO = new OrderVO();
-        orderVO.setTimestamp(1001000000);
-        orderVO.setExchange("TEST_EX");
-        orderVO.setSymbol("TEST_SYM");
-        orderVO.setPrice(1000.0);
-        orderVO.setQuantity(2000.0);
-        orderVO.setStatus(StatusEnum.NEW);
-        orderVO.setType("EXECUTE");
+        OrderVO orderVO = OrderVO.builder()
+                .timestamp(1001000000)
+                .exchange("TEST_EX")
+                .symbol("TEST_SYM")
+                .price(1000.0)
+                .quantity(2000.0)
+                .status(StatusEnum.NEW)
+                .type("EXECUTE")
+                .build();
         Exchange exchange = new Exchange(orderVO);
         return exchange;
     }
